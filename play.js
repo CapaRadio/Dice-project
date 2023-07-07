@@ -1,13 +1,6 @@
 'use strict';
 
-//Le Chargement de page
-const loader = document.querySelector('.loader');
-//Ajoute un évenement qui écoute
-window.addEventListener('load', () => {
-//Cela rajoute le fondu
-    loader.classList.add('fondu-out');
 
-})
 
 //Les éléments sélécteurs
 const player0 = document.querySelector('.player--0');
@@ -103,3 +96,11 @@ btnNew.addEventListener('click', function () {
 });
 
 
+//Le Chargement de page
+const loader = document.querySelector('.loader');
+//Ajoute un évenement qui écoute
+window.addEventListener('load', () => {
+//Cela rajoute le fondu
+    loader.classList.add('fondu-out');
+
+})
