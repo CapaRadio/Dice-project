@@ -71,26 +71,31 @@ btnHold.addEventListener('click', function () {
   if (playing) {
     //1.Ajoute le score ROUND au score GLOBAL du joueur 
     scores[activePlayer] += currentScore;
-    //Affiche le score aux scores du joueur actuel
+    //Affiche le score au score du joueur actuel
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
     //Si le score du joueur est égale à 100, alors la partie est finis
     if (scores[activePlayer] >= 100) {
       //Termine la partie
       diceElement.classList.add('hidden');
+      // Cache le dé
       playing = false;
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.add('player--winner');
+        // Selon le joueur selectionner et son score : ajoute la classe winner
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.remove('player--active');
+        // Selon le joueur selectionner et son score : ajoute la classe active ( donc le joueur continue de jouer )
     } else {
       switchPlayer();
     }
+    // Sinon change de joueur
   }
 });
 
+// Fonction nouvelle partie 
 btnNew.addEventListener('click', function () {
   init();
 });
@@ -98,9 +103,21 @@ btnNew.addEventListener('click', function () {
 
 //Le Chargement de page
 const loader = document.querySelector('.loader');
-//Ajoute un évenement qui écoute
+//Ajoute un évenement qui écoute le chargement
 window.addEventListener('load', () => {
 //Cela rajoute le fondu
     loader.classList.add('fondu-out');
 
 })
+
+
+// menu burger mobile 
+
+//Constante menu
+const menuHamburger = document.querySelector(".menu-hamburger")
+//Constante navLinks
+    const navLinks = document.querySelector(".nav-links")
+//Ajoute un événement qui écoute le click qui appelle la classe mobile menu
+    menuHamburger.addEventListener('click',()=>{
+    navLinks.classList.toggle('mobile-menu')
+    })

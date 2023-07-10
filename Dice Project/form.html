@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Contact</title>
+    <link rel="stylesheet" type="text/css" href="form.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="../Home.html" class="logo">ADVENTURE TIMES</a>
+      <div class="nav-links">
+          <ul>
+              <li class="active"><a href="../Home.html">Accueil</a></li>
+              <li><a href="play.html">Jouer</a></li>
+              <li><a href="shop.html">Boutique</a></li>
+              <li><a href="rules.html">Règles du Jeu</a></li>
+              <li><a href="form.html">Contact</a></li>
+          </ul>
+      </div>
+      <img src="../img/menu-btn.png" alt="menu hamburger" class="menu-hamburger">
+  </nav>
+  </header>
+  
+  <main>
+    <h1>Contactez-nous</h1>
+    <form action="#" method="POST" class="contact-form">
+      <div class="form-group">
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Adresse e-mail :</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      
+      <button type="submit">Envoyer</button>
+    </form>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Copyright. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>

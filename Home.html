@@ -4,32 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Home.css">
-    <title>Document</title>
+    <script src="Home.js"></script>
+    <title>Adventures Times</title>
 </head>
 <body>
-    
+
     <header>
         <nav class="navbar">
-        <a href="#" class="logo">ADVENTURE TIMES</a>
-        <div class="nav-links">
+            <a href="Home.html" class="logo">ADVENTURE TIMES</a>
+            <div class="nav-links">
             <ul>
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="play.html">Adventures</a></li>
-                <li><a href="#">Support</a></li>
-                <li><a href="#">Infos</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="active"><a href="Home.html">Accueil</a></li>
+                <li><a href="Dice Project/play.html">Jouer</a></li>
+                <li><a href="Dice Project/shop.html">Boutique</a></li>
+                <li><a href="Dice Project/rules.html">Règles du Jeu</a></li>
+                <li><a href="Dice Project/form.html">Contact</a></li>
             </ul>
-        </div>
-        <img src="../img/menu-btn.png" alt="menu hamburger" class="menu-hamburger">
-    </nav>
-</header>
+            </div>
+            <img src="../img/menu-btn.png" alt="menu hamburger" class="menu-hamburger">
+        </nav>
+    </header>
+    <footer>
+        <p>&copy; 2023 Copyright. Tous droits réservés.</p>
+      </footer>
 </body>
-<script>
-    const menuHamburger = document.querySelector(".menu-hamburger")
-    const navLinks = document.querySelector(".nav-links")
-
-    menuHamburger.addEventListener('click',()=>{
-    navLinks.classList.toggle('mobile-menu')
-    })
-</script>
 </html>

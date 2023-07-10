@@ -4,29 +4,27 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  text-decoration: none;
+  list-style: none;
 }
 
 html {
-  font-size: 62.5%;
-  box-sizing: border-box;
+   /* font-size: 62.5%;  */
+  box-sizing: border-box; 
 }
 
 body {
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
-  height: 100vh;
-  color: #333;
   background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  
 }
 
 /* LAYOUT */
 main {
   position: relative;
-  width: 100rem;
-  height: 60rem;
+  width: 60rem;
+  height: 35rem;
   background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(200px);
   filter: blur();
@@ -34,6 +32,20 @@ main {
   border-radius: 9px;
   overflow: hidden;
   display: flex;
+  margin-top: 5rem;
+  margin-left: 10rem;
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 900px){
+  main{
+    width: 25rem;
+    height: 80rem;
+    margin-top: 7rem;
+    margin-left: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .player {
@@ -45,10 +57,10 @@ main {
   transition: all 0.75s;
 }
 
-/* ELEMENTS */
+/* Eléments */
 .name {
   position: relative;
-  font-size: 4rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   word-spacing: 2px;
@@ -57,7 +69,7 @@ main {
 }
 
 .score {
-  font-size: 8rem;
+  font-size: 3rem;
   font-weight: 300;
   color: #c7365f;
   margin-bottom: auto;
@@ -65,8 +77,6 @@ main {
 
 .player--active {
   background-color: rgba(255, 255, 255, 0.4);
-  /* display: flex;
-  flex-wrap: wrap; */
 }
 
 .player--active .name {
@@ -87,32 +97,50 @@ main {
   border-radius: 9px;
   color: #fff;
   width: 65%;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
   transition: all 0.75s;
+}
+
+@media screen and (max-width:900px){
+  .current{
+    width: 80%;
+  }
 }
 
 .current-label {
   text-transform: uppercase;
   margin-bottom: 1rem;
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   color: #ddd;
 }
 
-.current-score {
-  font-size: 3.5rem;
+@media screen and (max-width:900px){
+  .current-label{
+    font-size: 1rem;
+  }
 }
 
-/* ABSOLUTE POSITIONED ELEMENTS */
+.current-score {
+  font-size: 2rem;
+}
+
+@media screen and (max-width:900px){
+  .current-score{
+    font-size: 1.5rem;
+  }
+}
+
+/* Elements position Absolute */
+
 .btn {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   color: #444;
   background: none;
-  border: none;
   font-family: inherit;
-  font-size: 1.8rem;
+  font-size: 1rem;
   text-transform: uppercase;
   cursor: pointer;
   font-weight: 400;
@@ -122,27 +150,61 @@ main {
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
 
-  padding: 0.7rem 2.5rem;
-  border-radius: 50rem;
+  padding: 0.7rem 2rem;
+  border-radius: 15rem;
   box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
 }
 
 .btn::first-letter {
-  font-size: 2.4rem;
+  font-size: 2rem;
   display: inline-block;
   margin-right: 0.7rem;
+}
+
+@media screen and (max-width:900px){
+  .btn::first-letter{
+    font-size:1rem;
+  }
 }
 
 .btn--new {
   top: 4rem;
 }
 
+@media screen and (max-width:900px)  {
+  .btn--new{
+    
+    font-size: 0.5rem;
+    width: 8rem;
+    height: 3rem;
+  }
+
+  .btnnew{
+    margin-top: -0.75rem;
+  
+  }
+}
+
 .btn--roll {
-  top: 39.3rem;
+  top: 20.3rem;
+}
+
+@media screen and (max-width:900px){
+  .btn--roll{
+    font-size: 0.75rem;
+    top: 0.5rem;
+  }
 }
 
 .btn--hold {
-  top: 46.1rem;
+  top: 28.1rem;
+}
+
+@media screen and (max-width:900px){
+  .btn--hold{
+    font-size: 0.75rem;
+    top: 35rem;
+  }
 }
 
 .btn:active {
@@ -159,8 +221,14 @@ main {
   left: 50%;
   top: 16.5rem;
   transform: translateX(-50%);
-  height: 10rem;
+  height: 6rem;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width:900px){
+  .dice{
+    top:15rem;
+  }
 }
 
 .player--winner {
@@ -177,119 +245,16 @@ main {
 }
 
 
-/* Le Chargement de page */
-
-.accueil{
-  height: 100%;
-  width: 100%;
-  background-image: url(tree.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.accueil h1 {
-  font-size: 120px;
-  margin-bottom: 450px;
-  text-align: center;
-  color: white;
-}
-
-/* loader */
-
-.loader {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  display: flex; 
-  justify-content: center;
-  align-items: center;
-}
-.lettre {
-  color: #484848;
-  font-size: 80px;
-  letter-spacing: 15px;
-  margin-bottom: 150px;
-  animation: flash 1.2s linear infinite;
-}
-@keyframes flash {
-  0% {
-      color: #fff900;
-      text-shadow: 0 0 7px #fff900;
-  }
-  90% {
-      color: #484848;
-      text-shadow: none;
-  }
-  100% {
-      color: #fff900;
-      text-shadow: 0 0 7px #fff900;
-  }
-}
-
-.lettre:nth-child(1){
-  animation-delay: 0.1s;
-}
-.lettre:nth-child(2){
-  animation-delay: 0.2s;
-}
-.lettre:nth-child(3){
-  animation-delay: 0.3s;
-}
-.lettre:nth-child(4){
-  animation-delay: 0.4s;
-}
-.lettre:nth-child(5){
-  animation-delay: 0.5s;
-}
-.lettre:nth-child(6){
-  animation-delay: 0.6s;
-}
-.lettre:nth-child(7){
-  animation-delay: 0.7s;
-}
-.lettre:nth-child(8){
-  animation-delay: 0.8s;
-}
-.lettre:nth-child(9){
-  animation-delay: 0.9s;
-}
-.lettre:nth-child(10){
-  animation-delay: 1s;
-}
-
-.fondu-out {
-  opacity: 0;
-  transition: opacity 0.4s ease-out;
-}
-
 /* Barre de navigation */
 
-*{
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
-}
-
-body{
-  font-family: sans-serif;
-
-}
-
-
-
 .navbar{
-  padding: 50px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   width: 100%;
   box-sizing: border-box;
   align-items: center;
+  background-color: black;
 }
 
 .navbar a{
@@ -321,7 +286,6 @@ body{
   width: 35px;
   top: 50px;
   right: 30px;
-
 }
 
 
@@ -336,17 +300,21 @@ body{
       position: absolute;
       top: 40px;
       left: 30px;
+      font-size: 1em;
+      z-index: 101;
   }
 
   .navbar .menu-hamburger{
       display: block;
+      cursor: pointer;
+      z-index: 101;
   }
 
 
   .nav-links {
       top: 0;
       left: 0;
-      position: absolute;
+      /* position: absolute; */
       background-color: rgba(255, 255, 255, 0.20);
       backdrop-filter: blur(8px);
       width: 100%;
@@ -356,6 +324,8 @@ body{
       align-items: center;
       margin-left: -100%;
       transition: all 0.5s ease;
+      position: fixed;
+      z-index: 100;
   }
 
   .nav-links.mobile-menu{
@@ -375,4 +345,11 @@ body{
   }
   
 
+}
+
+footer {
+  background-color: black;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
 }
